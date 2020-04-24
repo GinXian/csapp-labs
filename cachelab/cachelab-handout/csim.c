@@ -98,7 +98,7 @@ int main(int argc, char* argv[])
 
 
 
-	char instr[50] = {' '};
+	char instr[60] = {' '};
 	char* token;
 	char* operation;
 	
@@ -129,10 +129,8 @@ int main(int argc, char* argv[])
 
 	    unsigned long smask = ((1<<_s_)-1)<<_b_;
 		unsigned long tmask = ~((1<<(_s_+_b_))-1);
-		//printf("%lx\n%lx\n",smask,tmask);
 		ntag = (addr & tmask)>>(_s_+_b_);
 		nset = (addr & smask)>>_b_;
-		//printf("%ld\n%ld\n",ntag,nset);
 		bool isValid = true;
 		bool isHit = false;
 		
